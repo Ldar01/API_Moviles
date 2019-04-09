@@ -18,7 +18,7 @@ mongoose.connect("mongodb://localhost/nombredebase").then(function(){
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var abogadosRouter = require('./routes/abogados');
+var coinsRouter = require('./routes/coins');
 
 var app = express();
 
