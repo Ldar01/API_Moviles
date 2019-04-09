@@ -9,7 +9,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 mongoose.Promise = global.Promise;
-mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/nombredebase").then(function(){
   console.log("You are connected :D");
 }).catch(function(err){
