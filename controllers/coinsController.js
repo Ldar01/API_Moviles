@@ -30,6 +30,82 @@ module.exports.getOne = function(req, res){
     }
 };
 
+module.exports.getByName = function(req, res){
+    if(req.params.name){
+        //console.log(req.params.name);
+        coinModel.findOne({name:req.params.name}, function(err, coin){
+            if(err){
+                res.status(500);
+                return res.json({"Ok": false, error: err});
+            }
+            else{
+                res.json(coin);
+            }
+        });
+    }
+    else{
+        res.status(400);
+        console.log("No se brindo nada");
+    }
+};
+
+module.exports.getByCountry = function(req, res){
+    if(req.params.country){
+        //console.log(req.params.name);
+        coinModel.findOne({country:req.params.country}, function(err, coin){
+            if(err){
+                res.status(500);
+                return res.json({"Ok": false, error: err});
+            }
+            else{
+                res.json(coin);
+            }
+        });
+    }
+    else{
+        res.status(400);
+        console.log("No se brindo nada");
+    }
+};
+
+module.exports.getAvailable = function(req, res){
+    if(req.params.isAvailable){
+        //console.log(req.params.name);
+        coinModel.find({isAvailable:req.params.isAvailable}, function(err, coin){
+            if(err){
+                res.status(500);
+                return res.json({"Ok": false, error: err});
+            }
+            else{
+                res.json(coin);
+            }
+        });
+    }
+    else{
+        res.status(400);
+        console.log("No se brindo nada");
+    }
+};
+
+module.exports.getByYear = function(req, res){
+    if(req.params.year){
+        //console.log(req.params.name);
+        coinModel.findOne({year:req.params.year}, function(err, coin){
+            if(err){
+                res.status(500);
+                return res.json({"Ok": false, error: err});
+            }
+            else{
+                res.json(coin);
+            }
+        });
+    }
+    else{
+        res.status(400);
+        console.log("No se brindo nada");
+    }
+};
+
 module.exports.Create = function(req, res){
     var nuevo = new coinModel({name: req.body.name,
                                 country:req.body.country,
