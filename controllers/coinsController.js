@@ -107,7 +107,7 @@ module.exports.getByYear = function(req, res){
 };
 
 module.exports.Create = function(req, res){
-    var nuevo = new coinModel({name: req.body.name,
+    var nuevo = new coin({name: req.body.name,
                                 country:req.body.country,
                                 value: req.body.value,
                                 value_us: req.body.value_us,
